@@ -1,6 +1,9 @@
 package poc.config;
 
+import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @ConfigurationProperties(prefix = "app")
 public class AppProperties {

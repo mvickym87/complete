@@ -68,15 +68,17 @@ dependencies {
     compile("org.springframework:spring-web")
     compile("com.fasterxml.jackson.core:jackson-databind")
     compile("com.fasterxml.jackson.core:jackson-core")
+    compile("com.fasterxml.jackson.dataformat:jackson-dataformat-xml")
     compile("org.immutables:value:2.4.4")
     compile("org.springframework.ws:spring-ws-core")
     testCompile("org.springframework.boot:spring-boot-starter-test")
     compile(files(genJaxb.classesDir).builtBy(genJaxb))
+    optional("org.springframework.boot:spring-boot-configuration-processor")
 
     jaxb "com.sun.xml.bind:jaxb-xjc:2.1.7"
 
 }
-
+compileJava.dependsOn(processResources)
 jar {
     baseName = 'gs-consuming-rest'
     version =  '0.1.0'

@@ -1,0 +1,32 @@
+{
+  "hints": [],
+  "properties": [
+    {
+      "sourceType": "poc.config.AppProperties",
+      "name": "app.soap-uri",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "poc.config.RestProviderConfig",
+      "name": "resources",
+      "type": "java.util.List<java.util.HashMap<java.lang.String,poc.providers.Resources>>"
+    },
+    {
+      "sourceType": "poc.config.RestProviderConfig",
+      "name": "url",
+      "type": "java.lang.String"
+    }
+  ],
+  "groups": [
+    {
+      "sourceType": "poc.config.RestProviderConfig",
+      "name": "",
+      "type": "poc.config.RestProviderConfig"
+    },
+    {
+      "sourceType": "poc.config.AppProperties",
+      "name": "app",
+      "type": "poc.config.AppProperties"
+    }
+  ]
+}

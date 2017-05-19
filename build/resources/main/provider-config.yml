@@ -1,0 +1,6 @@
+restProvider:
+  url: http://localhost:9999
+  resources:
+    hello:
+      path: hello
+      queryparams:

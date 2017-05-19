@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
+import poc.config.RestProviderConfig;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -31,10 +32,18 @@ public class ApplicationTest {
 	
 	@Autowired
 	private RestTemplate restTemplate;
+	@Autowired
+	private RestProviderConfig restProviderConfig;
 
 	@Test
 	public void contextLoads() {
 		assertThat(restTemplate).isNotNull();
+	}
+
+	@Test
+	public void contextLoadsProvider() {
+		assertThat(restProviderConfig).isNotNull();
+		assertThat(restProviderConfig.getUrl()).isNotNull();
 	}
 
 }

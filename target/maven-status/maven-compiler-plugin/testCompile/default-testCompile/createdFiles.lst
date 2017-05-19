@@ -1,1 +1,3 @@
+poc\controllers\PocControllerTest.class
 poc\ApplicationTest.class
+poc\providers\soap_provider\SoapProviderTest.class

@@ -11,6 +11,8 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import poc.config.RestProviderConfig;
+import poc.providers.test_provider.RestProvider;
 
 @SpringBootApplication
 @EnableAutoConfiguration

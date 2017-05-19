@@ -3,14 +3,14 @@ package poc.providers.soap_provider;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
-
 import poc.wsdl.GetQuote;
 import poc.wsdl.GetQuoteResponse;
+
+import java.util.HashMap;
 
 @Component
 public class QuoteClient extends WebServiceGatewaySupport {
@@ -20,17 +20,17 @@ public class QuoteClient extends WebServiceGatewaySupport {
 	@Value("${app.soapUri}")
 	private String soapUri;
 
-	public GetQuoteResponse getQuote(String ticker) {
+	public GetQuoteResponse sendGet(String resource, final HashMap<String, String> params) {
 
 		GetQuote request = new GetQuote();
-		request.setSymbol(ticker);
+		request.setSymbol(params.get("ticker"));
 
-		log.info("Requesting quote for " + ticker);
+		log.info("Requesting quote for " + params.get("ticker"));
 
 		GetQuoteResponse response = (GetQuoteResponse) getWebServiceTemplate()
-				.marshalSendAndReceive("http://www.webservicex.com/stockquote.asmx",
+				.marshalSendAndReceive(soapUri,
 						request,
-						new SoapActionCallback("http://www.webserviceX.NET/GetQuote"));
+						new SoapActionCallback(resource));
 
 		return response;
 	}

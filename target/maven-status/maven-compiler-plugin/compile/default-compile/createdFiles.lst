@@ -1,5 +1,6 @@
 poc\wsdl\ObjectFactory.class
-poc\providers\test_provider\TestProvider.class
+poc\providers\test_provider\RestProvider.class
+poc\config\RestProviderConfig.class
 poc\providers\test_provider\models\Value.class
 poc\providers\soap_provider\QuoteConfiguration.class
 poc\controllers\PocController.class
@@ -10,7 +11,7 @@ poc\providers\soap_provider\QuoteClient.class
 poc\providers\test_provider\models\Quote.class
 poc\config\AppProperties.class
 poc\wsdl\package-info.class
+poc\providers\Resources.class
 poc\wsdl\GetQuoteResponse.class
+META-INF\spring-configuration-metadata.json
 poc\providers\soap_provider\SoapProvider.class
-poc\enums\ProviderType.class
-poc\providers\SenderClient.class
